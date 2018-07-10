@@ -1,5 +1,9 @@
+const http = require('http');
+const PORT = process.env.PORT || 5000;
+
 var express = require('express');
 var app = express();
+
 app.use(express.static('public'));
 app.get('/', function(req, res){
     res.send('Hello home page');;
@@ -33,6 +37,7 @@ app.get('/route', function(req, res){
 app.get('/login', function(req, res){
     res.send('<h1>Login please</h1>');
 });
-app.listen(3000, function(){
-    console.log('Conneted 3000 port!');
+
+server.listen(PORT, () => {
+  console.log(`Server running on ${PORT}/`);
 });
